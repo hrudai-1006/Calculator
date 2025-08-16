@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form method="POST">
+        <input type="number" name="num1" step="any" placeholder="Number 1" required>
+        <input type="number" name="num2" step="any" placeholder="Number 2">
+        <div class="calculator-grid">
+            <button name="operation" value="add">+</button>
+            <button name="operation" value="sub">-</button>
+            <button name="operation" value="mul">×</button>
+            <button name="operation" value="div">÷</button>
+            <button name="operation" value="mod">%</button>
+            <button name="operation" value="square">x²</button>
+            <button name="operation" value="sqrt">√</button>
+        </div>
+    </form>
+
+    {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
